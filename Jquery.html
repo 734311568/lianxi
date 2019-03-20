@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<META charset="UTF-8"></META>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<TITLE>DOM 练习</TITLE>
+	</HEAD>
+	<BODY id="body">
+	<SCRIPT>
+	$(document).ready(function(){
+		//声明创建FIELDSET的节点元素
+		var fielDset=document.createElement('FIELDSET');
+		
+		//声明创建LEGEND的节点元素
+		var legend=document.createElement('LEGEND');	
+		$(legend).text('练习DOM的 jquery');
+		$(fielDset).append(legend);
+		//为body追加子节点
+		$("#body").append(fielDset);
+		
+		
+		//声明form元素的创建
+		var  form =document.createElement('FORM');
+			$(form).attr({action:'www.baidu.com'
+			,method:'post',
+			enctype:'multiple/form-data'
+			});
+			//追加form到 fielDset节点下
+			$(fielDset).append(form);	
+			
+			
+		//创建表格 
+		var  table =document.createElement('TABLE');
+		//添加表格的属性
+			$(table).attr({border:1});
+		//创建表格体
+		var  tbody=document.createElement('TBODY');
+		//创建第一行
+		var line1 =document.createElement('TR');
+		var label=document.createElement('LABEL');
+			$(label).attr({'for':'fullName'});
+			$(label).text('姓名');
+		var line1Td1=document.createElement('TD');
+		var line1Td2=document.createElement('TD');
+		//input 的输入框属性的设置
+		var input=document.createElement('INPUT');
+			$(input).attr({'id':'fullName',
+			'name':'fullName','placeholder':'请输入全名',
+			'type':'text'});
+			$(line1Td1).append(label);
+			$(line1Td2).append(input);
+			$(line1).append(line1Td1);
+			$(line1).append(line1Td2);
+			
+		///创建第二行
+		var line2 =document.createElement('TR');	
+		var line2Td1=document.createElement('TD'); 
+		var line2Td2=document.createElement('TD'); 
+		var  labe2 =document.createElement('LABEL');
+		var  labe3 =document.createElement('LABEL');
+		var  input3=document.createElement('INPUT');
+		var  input2 =document.createElement('INPUT');
+		var span=document.createElement('SPAN');
+		var span1=document.createElement('SPAN');
+			$(span).text('女');
+			$(input2).attr({'name':'gender',
+			'type':'radio',
+			'value':'false'});
+			$(span1).text('男');
+			$(input3).attr({'name':'gender',
+			'type':'radio',
+			'value':'false'});
+		//各级节点的子节点的追加
+			$(labe2).append(span);
+			$(labe3).append(span1);
+			$(labe2).append(input2);
+			$(labe3).append(input3);			
+			$(line2Td1).text('性别');
+			$(line2Td2).append(labe2);
+			$(line2Td2).append(labe3);
+			$(line2).append(line2Td1);
+			$(line2).append(line2Td2);
+			
+		//创建第三行
+		var line3 =document.createElement('TR');
+		var line3Td1=document.createElement('TD');
+		
+		var line3Td2=document.createElement('TD');
+		var  labe4=document.createElement('LABEL');
+		var  labe5=document.createElement('LABEL');
+		var  labe6=document.createElement('LABEL');
+		var  input6=document.createElement('INPUT');
+		var  input7=document.createElement('INPUT');
+		var  input8=document.createElement('INPUT');
+		var span3=document.createElement('SPAN');
+		var span4=document.createElement('SPAN');
+		var span5=document.createElement('SPAN');
+			$(input6).attr({'name':'role','type':'checkbox','value':'p'});
+			$(input7).attr({'name':'role','type':'checkbox','value':'b'});
+			$(input8).attr({'name':'role','type':'checkbox','value':'c'});
+			$(span3).text('p端');
+			$(span4).text('b端');
+			$(span5).text('c端');
+			$(labe4).append(input6);
+			$(labe4).append(span3);
+			$(labe5).append(input7);
+			$(labe5).append(span4);
+			$(labe6).append(input8);
+			$(labe6).append(span5);
+			$(line3Td1).text('身份：');
+			$(line3Td2).append(labe4);
+			$(line3Td2).append(labe5);
+			$(line3Td2).append(labe6);
+		//第三行的各行的追加
+			$(line3).append(line3Td1);
+			$(line3).append(line3Td2);
+			
+		//创建第四行	
+		var line4 =document.createElement('TR');
+		var line4Td1=document.createElement('TD');
+		var line4Td2=document.createElement('TD');
+		var  labe7=document.createElement('LABEL');
+		var  select=document.createElement('SELECT');
+		var  option1=document.createElement('OPTION');
+		var  option2=document.createElement('OPTION');
+		var  option3=document.createElement('OPTION');
+		$(option1).attr({'value':'1'});
+		$(option2).attr({'value':'2'});
+		$(option3).attr({'value':'3'});
+		$(option1).text('厦门');
+		$(option2).text('台湾');
+		$(option3).text('福建');
+		$(labe7).attr({'for':'area'});
+		$(labe7).text('地区');
+		
+		$(select).attr({'id':'area','name':'area'});
+		$(select).append(option1);
+		$(select).append(option2);
+		$(select).append(option3);
+		
+		$(line4Td1).append(labe7);
+		$(line4Td2).append(select);
+		//第四行各级追加
+			$(line4).append(line4Td1);
+			$(line4).append(line4Td2);
+			
+			
+			
+		//创建第五行	
+		var line5 =document.createElement('TR');	
+		var line5Td1=document.createElement('TD');
+		var line5Td2=document.createElement('TD');
+		var  labe8=document.createElement('LABEL');
+		var  input9=document.createElement('INPUT');
+			$(labe8).attr({'for':'file'});
+			$(labe8).text('上传');
+			$(input9).attr({'id':'file','accept':'img/*','naem':'file','type':'file'});
+			$(line5Td1).append(labe8);
+			$(line5Td2).append(input9);
+			$(line5).append(line5Td1);
+			$(line5).append(line5Td2);
+			
+			
+			
+			
+		//创建第六行行	
+		var line6 =document.createElement('TR');
+		var line6Td1=document.createElement('TD');
+		
+		var  input10=document.createElement('INPUT');
+		var  input11=document.createElement('INPUT');
+		$(line6Td1).attr({'colspan':'2'})
+		
+		$(input10).attr({'type':'reset','value':'取消'})
+		$(input11).attr({'type':'submit','value':'确定'})
+		$(line6Td1).append(input10);
+		$(line6Td1).append(input11);
+		$(line6).append(line6Td1);
+		
+		
+		//tbody 各行的追加	
+			$(tbody).append(line1);
+			$(tbody).append(line2);
+			$(tbody).append(line3);
+			$(tbody).append(line4);
+			$(tbody).append(line5);
+			$(tbody).append(line6);
+		
+		//table追加tbody
+			$(table).append(tbody);
+		//FORM追加table
+			$(form).append(table);
+			
+			
+			
+	});
+
+		
+	</SCRIPT>
+	</BODY>
+</HTML>

@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+
+<html>
+<head><meta http-equiv="content-type" content="text/html;charset=utf-8"></head>
+
+ 	
+<body id="bd">
+<script >
+<!-- 创建元素-->
+ 
+  var  table=document.createElement('table');
+  <!-- 被创建元素被追加domcument 文档树上-->
+	document.getElementById('bd').appendChild(table);
+         table.setAttribute("border","1");
+        <!-- 声明 table 下面的三个 子标签 -->
+	var thead= document.createElement('thead');
+	var tfoot= document.createElement('tfoot');
+	var thead1= document.createElement('thead');
+	<!--table 追加 三子标签-->
+	table.appendChild(thead);
+	table.appendChild(tfoot);
+	table.appendChild(thead1);
+	
+	var tr1 =document.createElement('tr');
+	var th1 =document.createElement('th');
+	var th2 =document.createElement('th');
+	var th3 =document.createElement('th');
+	<!-- 表头 插入文本-->
+	th1.innerHTML="xxx";
+	th2.innerHTML="yyy";
+	th3.innerHTML="zzz";
+	tr1.appendChild(th1)
+	tr1.appendChild(th2)
+	tr1.appendChild(th3)
+	thead.appendChild(tr1)
+	
+	<!-- 插入 tfoot-->
+	var trf =document.createElement('tr');
+	
+	var tdf =document.createElement('td');
+	
+	tdf.setAttribute('colspan','3');
+	tdf.innerHTML="000";
+	trf.appendChild(tdf);
+	tfoot.appendChild(trf);
+	<!-- 插入thead 的子标签--->
+	var trh =document.createElement('tr');
+	var tdh1 =document.createElement('td');
+	var tdh2=document.createElement('td');
+	var tdh3=document.createElement('td');
+	trh.appendChild(tdh1);
+	trh.appendChild(tdh2);
+	trh.appendChild(tdh3);
+	tdh1.innerHTML="111";
+	tdh2.innerHTML="222";
+	tdh3.innerHTML="333";
+	
+	<!--插入thead第二的子标---->
+	var trh1 =document.createElement('tr');
+	var tdh5 =document.createElement('td');
+	var tdh6=document.createElement('td');
+	var tdh7=document.createElement('td');
+	trh1.appendChild(tdh5);
+	trh1.appendChild(tdh6);
+	trh1.appendChild(tdh7);
+	tdh5.innerHTML="444";
+	tdh6.innerHTML="555";
+	tdh7.innerHTML="666";
+	<!--插入thead第三个的子标---->
+	var trh3 =document.createElement('tr');
+	var tdh8 =document.createElement('td');
+	var tdh9=document.createElement('td');
+	var tdh10=document.createElement('td');
+	trh3.appendChild(tdh8);
+	trh3.appendChild(tdh9);
+	trh3.appendChild(tdh10);
+	tdh8.innerHTML="444";
+	tdh9.innerHTML="555";
+	tdh10.innerHTML="666";
+	thead1.appendChild(trh);
+	thead1.appendChild(trh1);
+	thead1.appendChild(trh3);
+	
+</script>
+</body >
+
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<HTML>
+<!--这个指定字符集让各种不同浏览器熏染 -->
+<HEAD>
+	<META charset="UTF-8">
+</HEAD>
+<BODY id="bd">
+<script>
+   
+	<!-- 创建 表单的fieldset元素 -->
+	var fieldset=document.createElement('fieldset');
+	var  body=document.getElementById("bd");
+	body.appendChild(fieldset);
+	fieldset.setAttribute('style','width:200px')
+	<!-- LEGEND-->
+	var legend = document.createElement('legend');
+	legend.innerHTML="表单";
+	fieldset.appendChild(legend);
+	<!-- 创建form元素 -->
+	var form=document.createElement('form');
+	form.setAttribute('action','xxxxxxxxx');
+	form.setAttribute('method','post');
+	form.setAttribute('name','form');
+	<!--添加上传文件的组件-->
+	form.setAttribute('enctype','multipart/form-data');
+	<!-- 姓名的文本框-->
+	var name_input =document.createElement('input');
+	name_input.setAttribute('type','text');
+	name_input.setAttribute('style','width:200px')
+	name_input.setAttribute('name','name_input');
+	<!-- 表格 -->
+	var  table =document.createElement('table');
+	
+	<!--表格第一行 -->
+	var line1= document.createElement('tr');
+	
+	<!--第一行第一列-->
+	var td1= document.createElement('td');
+	<!--第一行第二列-->
+	var td2= document.createElement('td');
+	td2.appendChild(name_input);
+	<!--合并单元格 -->
+	td1.setAttribute('colspan','2');
+	td2.setAttribute('colspan','8');
+   
+	<!-- 第一列 添加姓名 的文本-->
+	td1.innerHTML="姓名";
+	<!-- 第二列的 输入框-->
+	
+	<!--添加文本的属性 -->
+	
+	td1.innerHTML="姓名";
+	<!--行追加列 -->
+	line1.appendChild(td1);
+	line1.appendChild(td2);
+	<!--表格第二行 -->
+	var line2= document.createElement('tr');
+	<!--表格第二行第一列 -->
+	var line2_td1=document.createElement('td');
+	<!--表格第二行第二列 -->
+	var line2_td2=document.createElement('td');
+	<!--表格第二行第三列 -->
+	var line2_td3=document.createElement('td');
+	<!--表格第二行第四 列 -->
+	var line2_td4=document.createElement('td');
+	<!--表格第二行第五列列 -->
+	var line2_td5=document.createElement('td');
+	line2_td1.setAttribute('colspan','2');
+	line2_td2.setAttribute('colspan','1');
+	line2_td3.setAttribute('colspan','1');
+	line2_td4.setAttribute('colspan','1');
+	line2_td5.setAttribute('colspan','1');
+	line2_td1.innerHTML="性别";
+	<!--创建男的单选框-->
+	var  line2_td2_radio=document.createElement('input');
+	line2_td2_radio.setAttribute('type','radio');
+	line2_td3.innerHTML="男";
+	<!--创建女的单选框-->
+	var  line2_td3_radio=document.createElement('input');
+	line2_td3_radio.setAttribute('type','radio');
+	line2_td5.innerHTML="女";
+	<!--追加单选框---->
+	line2_td2.appendChild(line2_td2_radio);
+	line2_td4.appendChild(line2_td3_radio);
+	line2.appendChild(line2_td1);
+	line2.appendChild(line2_td2);
+	line2.appendChild(line2_td3);
+	line2.appendChild(line2_td4);
+	line2.appendChild(line2_td5);
+	<!-- 第三行-->
+	var line3= document.createElement('tr');
+	<!-- 第三行的第一列--->
+	var line3_td1=document.createElement('td');
+	<!-- 第三行的第二列--->
+	var line3_td2=document.createElement('td');
+	<!-- 第三行的第三列--->
+	var line3_td3=document.createElement('td');
+	<!-- 第三行的第四列--->
+	var line3_td4=document.createElement('td');
+	<!-- 第三行的第五列--->
+	var line3_td5=document.createElement('td');
+	<!-- 第三行的第六列--->
+	var line3_td6=document.createElement('td');
+	<!-- 第三行的第七列--->
+	var line3_td7=document.createElement('td');
+	line3_td1.innerHTML="身份";
+	line3_td1.setAttribute('colspan','2');
+	line3_td2.setAttribute('colspan','1');
+	line3_td3.setAttribute('colspan','1');
+	line3_td4.setAttribute('colspan','1');
+	line3_td5.setAttribute('colspan','1');
+	line3_td6.setAttribute('colspan','1');
+	line3_td7.setAttribute('colspan','1');
+	
+	var lin3_td2_checkbox=document.createElement('input');
+	lin3_td2_checkbox.setAttribute('type','checkbox');
+	lin3_td2_checkbox.setAttribute('name','p端');
+	line3_td2.appendChild(lin3_td2_checkbox);
+	
+	
+	var lin3_td3_checkbox=document.createElement('input');
+	lin3_td3_checkbox.setAttribute('type','checkbox');
+	
+	line3_td3.innerHTML="p端";
+	
+	var lin3_td4_checkbox=document.createElement('input');
+	lin3_td4_checkbox.setAttribute('type','checkbox');
+	lin3_td4_checkbox.setAttribute('name','B端');
+	line3_td4.appendChild(lin3_td4_checkbox);
+	line3_td5.innerHTML="B端";
+	var lin3_td6_checkbox=document.createElement('input');
+	lin3_td6_checkbox.setAttribute('type','checkbox');
+	lin3_td6_checkbox.setAttribute('name','c端');
+	line3_td6.appendChild(lin3_td6_checkbox);
+	line3_td7.innerHTML="c端";
+	<!--第三行追加列 -->
+	line3.appendChild(line3_td1);
+	line3.appendChild(line3_td2);
+	line3.appendChild(line3_td3);
+	line3.appendChild(line3_td4);
+	line3.appendChild(line3_td5);
+	line3.appendChild(line3_td6);
+	line3.appendChild(line3_td7);
+	<!-- 第四行-->
+	var line4= document.createElement('tr');
+	line4_td1=document.createElement('td');
+	line4_td2=document.createElement('td');
+	line4_td1.setAttribute('colspan','2');
+	line4_td2.setAttribute('colspan','2');
+	line4_td1.innerHTML="地区";
+	var select1=document.createElement('select')
+	select1.setAttribute('name','select1');
+	<!--下拉选项节点 -->
+	var option1 =document.createElement('option');
+	var option2 =document.createElement('option');
+	var option3 =document.createElement('option');
+	option3.setAttribute('selected','selected')
+	option1.setAttribute('value','1');
+	option2.setAttribute('value','2');
+	option3.setAttribute('value','3');
+	option1.innerHTML="东区";
+	option2.innerHTML="北区";
+	option3.innerHTML="南区";
+	<!-- 追加选项节点-->
+	select1.appendChild(option1);
+	select1.appendChild(option2);
+	select1.appendChild(option3);
+	line4_td2.appendChild(select1);
+	
+	line4.appendChild(line4_td1);
+	line4.appendChild(line4_td2);
+	<!-- 第五行-->
+	var line5= document.createElement('tr');
+	<!--文件域-->
+	var line5_td1= document.createElement('td');
+	
+	line5_td1.setAttribute('colspan','8');
+	
+	var file =document.createElement('input');
+	file.setAttribute('type','file');
+	file.setAttribute('name','file');
+	file.setAttribute('accept','text/html');
+	line5_td1.appendChild(file);
+	line5.appendChild(line5_td1);
+	
+	<!-- 第六行-->
+	var line6= document.createElement('tr');
+	var line6_td1= document.createElement('td');
+	var line6_td2= document.createElement('td');
+	var cancel =document.createElement('input');
+	cancel.setAttribute('type','reset');
+	cancel.setAttribute('value','取消');
+	var submit =document.createElement('input');
+	submit.setAttribute('type','submit');
+	submit.setAttribute('value','提交');
+	line6_td1.setAttribute('colspan','2');
+	line6_td2.setAttribute('colspan','2');
+	line6_td1.appendChild(cancel);
+	line6_td2.appendChild(submit);
+	line6.appendChild(line6_td1);
+	line6.appendChild(line6_td2);
+	<!--表格追加 第一行---->
+	table.appendChild(line1);
+	<!--表格追加 第二行--->
+	table.appendChild(line2);
+	<!--表格追加 第三行---->
+	table.appendChild(line3);
+	<!--表格追加 第四行---->
+	table.appendChild(line4);
+	<!--表格追加 第五行---->
+	table.appendChild(line5);
+	<!--表格追加 第五行---->
+	table.appendChild(line6);
+	<!--表单嵌套表格 -->
+	form.appendChild(table);
+	fieldset.appendChild(form);
+    <!---->
+</script>
+</BODY>
+
+
+</HTML>
